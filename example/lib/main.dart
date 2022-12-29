@@ -1,8 +1,6 @@
 import 'dart:async';
-
-import 'package:flutter/material.dart';
 import 'package:jalali_calendar/jalali_calendar.dart';
-import 'package:persian_date/persian_date.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -16,7 +14,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _State extends State<MyApp> {
-  PersianDate persianDate = PersianDate(format: "yyyy/mm/dd  \n DD  , d  MM  ");
+  PersianDate persianDate = PersianDate( "yyyy/mm/dd  \n DD  , d  MM  ");
   String _datetime = '';
   String _format = 'yyyy-mm-dd';
   String _value = '';
@@ -36,7 +34,7 @@ class _State extends State<MyApp> {
   void initState() {
     super.initState();
     print(
-        "Parse TO Format ${persianDate.gregorianToJalali("2019-02-20T00:19:54.000Z", "yyyy-m-d hh:nn")}");
+        "Parse TO Format ${persianDate.parseToFormat("2019-02-20T00:19:54.000Z", "yyyy-m-d hh:nn")}");
   }
 
   @override
@@ -55,16 +53,16 @@ class _State extends State<MyApp> {
                   Text('  مبدّل تاریخ و زمان ,‌ تاریخ هجری شمسی '),
                   Text(' تقویم شمسی '),
                   Text('date picker شمسی '),
-                  new RaisedButton(
+                  new ElevatedButton(
                     onPressed: _selectDate,
                     child: new Text('نمایش تقویم'),
                   ),
-                  new RaisedButton(
+                  new ElevatedButton(
                     onPressed: _showDatePicker,
                     child: new Text('نمایش دیت پیکر'),
                   ),
                   Text(
-                    "\nزمان و تاریخ فعلی سیستم :  ${persianDate.now}",
+                    "\nزمان و تاریخ فعلی سیستم :  ${persianDate.getNow}",
                     textAlign: TextAlign.center,
                     textDirection: TextDirection.rtl,
                   ),
