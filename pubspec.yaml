@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  jiffy: ^4.1.0
+  jiffy: ^6.2.1
 
 
 
