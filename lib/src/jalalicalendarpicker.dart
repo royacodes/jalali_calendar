@@ -999,7 +999,7 @@ class _DatePickerDialogState extends State<_DatePickerDialog> {
           .replaceAll("nn", "mm")
           .replaceAll("n", "m");
 
-      Navigator.pop(context, Jiffy(_selectedDate).format(selectedFormat));
+      Navigator.pop(context, Jiffy.parse(_selectedDate).format(selectedFormat));
     } else {
       Navigator.pop(context, selectpDate.getDate);
     }
